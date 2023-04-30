@@ -1,33 +1,31 @@
 import "./App.css";
 
-// import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-// import { initializeApp } from "firebase/app";
-// import { getAuth } from "firebase/auth";
-// import { getFirestore } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 import SignIn from "./components/SignIn";
 // import SignOut from "./components/SignOut";
 import ChatRoom from "./components/ChatRoom";
 
-// const firebaseConfig = {
-//   apiKey: process.env.REACT_APP_API_KEY,
-//   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-//   projectId: process.env.REACT_APP_PROJECT_ID,
-//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-//   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-//   appId: process.env.REACT_APP_APP_ID,
-//   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-// };
+ const firebaseConfig = {
+   apiKey: process.env.REACT_APP_API_KEY,
+   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+   projectId: process.env.REACT_APP_PROJECT_ID,
+   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+   appId: process.env.REACT_APP_APP_ID,
+   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+ };
 
-// const firebaseApp = initializeApp(firebaseConfig);
-// const auth = getAuth(firebaseApp);
-// const firestore = getFirestore(firebaseApp);
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
 
 function App() {
-  const auth = null;
-  const user = 1;
-  //const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <div className="App">
