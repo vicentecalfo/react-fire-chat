@@ -6,7 +6,8 @@
   justify-content: center;
 }
 
-.sign-in button {
+.sign-in button,
+.sign-in button:hover {
   display: grid;
   grid-template-columns: 60px 1fr;
   outline: none;

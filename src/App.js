@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 import SignIn from "./components/SignIn";
-// import SignOut from "./components/SignOut";
+import SignOut from "./components/SignOut";
 import ChatRoom from "./components/ChatRoom";
 
  const firebaseConfig = {
@@ -26,6 +26,7 @@ const firestore = getFirestore(firebaseApp);
 
 function App() {
   const [user] = useAuthState(auth);
+  //console.log(user);
 
   return (
     <div className="App">
@@ -35,13 +36,13 @@ function App() {
             <img src="/logo.png" alt="Logo Firechat" />
           </div>
           <div>
-            <h1> Firechat</h1>
+            <h1>Firechat</h1>
             <h2>React Firebase Chat</h2>
           </div>
         </div>
-        <div className="user">{/* <SignOut auth={auth} /> */}</div>
+        <div className="user">{ <SignOut auth={auth} /> }</div>
       </header>
-      {user ? <ChatRoom /> : <SignIn auth={auth} />}
+      {user ? <ChatRoom firestore={firestore} auth={auth} /> : <SignIn auth={auth} />}
     </div>
   );
 }
